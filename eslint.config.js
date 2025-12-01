@@ -8,5 +8,5 @@ module.exports = defineConfig([
   {
     ignores: ['dist/*'],
   },
-    eslintPrettier,
+  eslintPrettier,
 ]);
