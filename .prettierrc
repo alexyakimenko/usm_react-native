@@ -2,5 +2,8 @@
   "tabWidth": 2,
   "singleQuote": true,
   "semi": true,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
 }
