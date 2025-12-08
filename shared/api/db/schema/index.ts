@@ -1,0 +1,1 @@
+export { categoryTable } from './category';
