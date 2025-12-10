@@ -14,6 +14,7 @@ const RootLayout = () => {
           borderTopColor: 'transparent',
           backgroundColor: colorScheme === 'dark' ? 'black' : 'white',
         },
+        animation: 'shift',
       }}
     >
       <Tabs.Screen
