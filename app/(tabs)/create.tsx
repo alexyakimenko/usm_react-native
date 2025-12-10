@@ -1,15 +1,16 @@
 import { ScrollView, View, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CreateRecipeForm from '@/features/create-recipe/ui/CreateRecipeForm';
+import ThemedText from '@/shared/ui/ThemedText';
 
 const Create = () => {
   return (
     <View className="flex-1 bg-white px-4 dark:bg-black">
       <ScrollView showsVerticalScrollIndicator={false}>
         <SafeAreaView>
-          <Text className="mt-4 text-3xl font-bold text-slate-950 dark:text-white">
+          <ThemedText className="mt-4 text-3xl font-bold">
             Create Recipe
-          </Text>
+          </ThemedText>
 
           <CreateRecipeForm />
         </SafeAreaView>
