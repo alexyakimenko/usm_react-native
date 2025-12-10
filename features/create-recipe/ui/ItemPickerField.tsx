@@ -1,21 +1,19 @@
 import { TouchableOpacity, Image, Text } from 'react-native';
 import pickImage from '@/shared/lib/image/pickImage';
-import { useState } from 'react';
+import React from 'react';
 
 interface ImagePickerFieldProps {
-  onChange: (value: string | null) => void;
+  image: string | null;
+  setImage: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const ImagePickerField = ({ onChange }: ImagePickerFieldProps) => {
-  const [image, setImage] = useState<string | null>(null);
-
+const ImagePickerField = ({ image, setImage }: ImagePickerFieldProps) => {
   return (
     <TouchableOpacity
       onPress={async () => {
         const uri = await pickImage();
 
         setImage(uri);
-        onChange(uri);
       }}
       className="items-center rounded bg-gray-300 p-1 dark:bg-[#ffffff05]"
     >

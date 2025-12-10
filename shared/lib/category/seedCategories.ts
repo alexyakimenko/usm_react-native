@@ -5,10 +5,10 @@ export async function seedCategories() {
   await db.delete(schemas.category);
 
   await db.insert(schemas.category).values([
-    { name: 'Breakfast', icon: '🍳' },
-    { name: 'Lunch', icon: '🥪' },
-    { name: 'Dinner', icon: '🍽️' },
-    { name: 'Dessert', icon: '🍰' },
-    { name: 'Snacks', icon: '🍪' },
+    { id: 1, name: 'Breakfast', icon: '🍳' },
+    { id: 2, name: 'Lunch', icon: '🥪' },
+    { id: 3, name: 'Dinner', icon: '🍽️' },
+    { id: 4, name: 'Dessert', icon: '🍰' },
+    { id: 5, name: 'Snacks', icon: '🍪' },
   ]);
 }

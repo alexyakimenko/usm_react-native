@@ -2,7 +2,7 @@ import { Directory, File, Paths } from 'expo-file-system';
 
 const saveImage = (uri: string) => {
   const ext = uri.split('.').pop();
-  if (ext) return null;
+  if (!ext) return null;
 
   const directory = new Directory(Paths.document, 'images');
   directory.create({ idempotent: true });

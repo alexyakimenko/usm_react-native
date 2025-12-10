@@ -1,9 +1,11 @@
 import { TextProps, Text } from 'react-native';
-const ThemedText = (props: TextProps) => {
+import cn from '@/shared/lib/cn';
+
+const ThemedText = ({ className, ...rest }: TextProps) => {
   return (
     <Text
-      {...props}
-      className={`text-zinc-950 dark:text-white ${props.className}`}
+      className={cn('text-zinc-950 dark:text-white', className)}
+      {...rest}
     />
   );
 };

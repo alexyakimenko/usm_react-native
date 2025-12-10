@@ -2,10 +2,11 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import useCreateRecipeForm from '@/features/create-recipe/model/useCreateRecipeForm';
 import useCreateRecipe from '@/features/create-recipe/model/useCreateRecipe';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import InputField from '@/features/create-recipe/ui/InputField';
 import ImagePickerField from '@/features/create-recipe/ui/ItemPickerField';
 import useCategories from '@/entities/category/model/useCategories';
+import saveImage from '@/shared/lib/image/saveImage';
 
 const CreateRecipeForm = () => {
   const { control, handleSubmit, reset, formState } = useCreateRecipeForm();
@@ -19,7 +20,7 @@ const CreateRecipeForm = () => {
     await createRecipe({
       ...data,
       categoryId: selectedCategory,
-      image,
+      image: image ? saveImage(image) : null,
     });
 
     reset();
@@ -77,7 +78,7 @@ const CreateRecipeForm = () => {
           error={formState.errors.tags}
         />
 
-        <ImagePickerField onChange={setImage} />
+        <ImagePickerField image={image} setImage={setImage} />
       </View>
 
       <TouchableOpacity
