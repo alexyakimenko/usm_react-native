@@ -42,9 +42,6 @@ app-example
 /ios
 /android
 
-# ide
-.idea/
-
 # drizzle
 drizzle/
 
