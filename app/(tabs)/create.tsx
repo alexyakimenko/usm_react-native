@@ -1,4 +1,4 @@
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CreateRecipeForm from '@/features/create-recipe/ui/CreateRecipeForm';
 import ThemedText from '@/shared/ui/ThemedText';

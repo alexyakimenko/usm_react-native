@@ -1,10 +1,4 @@
-import {
-  View,
-  ImageBackground,
-  Text,
-  TouchableOpacity,
-  useColorScheme,
-} from 'react-native';
+import { View, ImageBackground, Text, useColorScheme } from 'react-native';
 import { Fragment, useMemo } from 'react';
 import { Recipe } from '../model/types';
 import { Category } from '@/entities/category/model/types';

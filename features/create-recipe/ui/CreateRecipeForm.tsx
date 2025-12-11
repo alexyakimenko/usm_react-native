@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import useCreateRecipeForm from '@/features/create-recipe/model/useCreateRecipeForm';
 import useCreateRecipe from '@/features/create-recipe/model/useCreateRecipe';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import InputField from '@/features/create-recipe/ui/InputField';
 import ImagePickerField from '@/features/create-recipe/ui/ItemPickerField';
 import useCategories from '@/entities/category/model/useCategories';
