@@ -62,6 +62,7 @@ const CreateRecipeForm = () => {
           control={control}
           multiline
           error={formState.errors.ingredients}
+          placeholder={'One Ingredient - one line'}
         />
         <InputField
           name="steps"
@@ -69,6 +70,7 @@ const CreateRecipeForm = () => {
           control={control}
           multiline
           error={formState.errors.steps}
+          placeholder={'One Step - one line'}
         />
         <InputField
           name="tags"
@@ -76,6 +78,7 @@ const CreateRecipeForm = () => {
           control={control}
           multiline
           error={formState.errors.tags}
+          placeholder={'Separate tags with spaces'}
         />
 
         <ImagePickerField image={image} setImage={setImage} />
