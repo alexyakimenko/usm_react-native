@@ -51,6 +51,7 @@ const RecipeList = ({
             columnWrapperStyle={{
               justifyContent: 'center',
               gap: 8,
+              marginBottom: 12,
             }}
             style={{ marginTop: 32 }}
             scrollEnabled={false}

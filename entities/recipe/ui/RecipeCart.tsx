@@ -76,7 +76,7 @@ const RecipeCard = ({
           <ThemedText numberOfLines={3}>{data.description}</ThemedText>
         </View>
         <ThemedText className="my-2 mt-auto px-3 opacity-50">
-          Show more ...
+          Show more
         </ThemedText>
       </View>
     </Link>
