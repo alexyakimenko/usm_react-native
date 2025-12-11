@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import useCreateRecipeForm from '@/features/create-recipe/model/useCreateRecipeForm';
 import useCreateRecipe from '@/features/create-recipe/model/useCreateRecipe';
@@ -7,6 +7,7 @@ import InputField from '@/features/create-recipe/ui/InputField';
 import ImagePickerField from '@/features/create-recipe/ui/ItemPickerField';
 import useCategories from '@/entities/category/model/useCategories';
 import saveImage from '@/shared/lib/image/saveImage';
+import cn from '@/shared/lib/cn';
 
 const CreateRecipeForm = () => {
   const { control, handleSubmit, reset, formState } = useCreateRecipeForm();
@@ -28,10 +29,20 @@ const CreateRecipeForm = () => {
   });
 
   return (
-    <View className="mt-8 rounded-xl bg-gray-200 px-8 pb-8 dark:bg-zinc-950">
+    <View
+      className={cn('mt-8 rounded-xl bg-gray-200 px-8 pb-8 dark:bg-zinc-950', {
+        'pt-8': Platform.OS !== 'ios',
+      })}
+    >
+      {Platform.OS !== 'ios' && (
+        <Text className={'text-md font-bold dark:text-gray-500'}>Category</Text>
+      )}
       <Picker
         selectedValue={selectedCategory}
         onValueChange={setSelectedCategory}
+        style={{
+          color: 'white',
+        }}
       >
         {categories.map((category) => (
           <Picker.Item

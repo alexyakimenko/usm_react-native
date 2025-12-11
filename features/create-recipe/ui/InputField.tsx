@@ -1,4 +1,4 @@
-import { View, TextInput, Text, TextInputProps } from 'react-native';
+import { View, TextInput, Text, TextInputProps, Platform } from 'react-native';
 import { Control, FieldError, useController } from 'react-hook-form';
 
 interface InputProps extends TextInputProps {
@@ -26,6 +26,7 @@ const InputField = ({ name, title, control, error, ...rest }: InputProps) => {
         }
         value={field.value}
         onChangeText={field.onChange}
+        placeholderTextColor={Platform.OS !== 'ios' ? '#616b6c' : undefined}
         {...rest}
       />
     </View>
