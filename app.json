@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "usm_react-native",
-    "slug": "usm_react-native",
+    "name": "Recipe App",
+    "slug": "Recipe App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
