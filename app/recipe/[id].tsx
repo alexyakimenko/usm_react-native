@@ -9,6 +9,7 @@ import RecipeImage from '@/entities/recipe/ui/RecipeImage';
 import CategoryBadge from '@/entities/category/ui/CategoryBadge';
 import { ChecklistSection } from '@/shared/ui/ChecklistSection';
 import { RecipeTags } from '@/entities/recipe/ui/RecipeTags';
+import noImage from '@/shared/lib/no-image';
 
 const RecipePage = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -23,7 +24,7 @@ const RecipePage = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      {recipe.image && <RecipeImage uri={recipe.image} />}
+      <RecipeImage uri={recipe.image ?? noImage} />
 
       <View
         style={{

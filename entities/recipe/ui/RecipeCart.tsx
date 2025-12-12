@@ -4,6 +4,7 @@ import { Recipe } from '../model/types';
 import { Category } from '@/entities/category/model/types';
 import ThemedText from '@/shared/ui/ThemedText';
 import { Link } from 'expo-router';
+import noImage from '@/shared/lib/no-image';
 
 const RecipeCard = ({
   data,
@@ -36,23 +37,24 @@ const RecipeCard = ({
       asChild={true}
     >
       <View className="h-full">
-        {data.image && (
-          <ImageBackground className="h-30 w-full" source={{ uri: data.image }}>
-            <View className="items-end gap-1 p-2">
-              {data.tags
-                .split(' ')
-                .slice(0, 3)
-                .map((tag, index) => (
-                  <Fragment key={index}>
-                    <Text className="rounded bg-rose-900 px-1 text-white/70">
-                      {tag}
-                    </Text>
-                  </Fragment>
-                ))}
-            </View>
-          </ImageBackground>
-        )}
-
+        <ImageBackground
+          className="h-30 w-full"
+          source={{ uri: data.image ?? noImage }}
+        >
+          <View className="items-end gap-1 p-2">
+            {data.tags
+              .split(' ')
+              .slice(0, 3)
+              .map((tag, index) => (
+                <Fragment key={index}>
+                  <Text className="rounded bg-rose-900 px-1 text-white/70">
+                    {tag}
+                  </Text>
+                </Fragment>
+              ))}
+          </View>
+        </ImageBackground>
+        )
         <View className="mt-2 gap-2 px-3 py-1">
           {category && (
             <View className="flex-row justify-between opacity-50">
