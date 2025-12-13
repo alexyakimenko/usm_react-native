@@ -1,7 +1,13 @@
 import ThemedText from '@/shared/ui/ThemedText';
-import { Category } from '../model/types';
+import useCategories from '@/entities/category/model/useCategories';
 
-const CategoryBadge = ({ category }: { category: Category }) => {
+const CategoryBadge = ({ categoryId }: { categoryId: number }) => {
+  const { categories } = useCategories();
+
+  const category = categories.find((c) => c.id === categoryId);
+
+  if (!category) return null;
+
   return (
     <ThemedText className="text-xl opacity-50">
       {category.icon} {category.name}

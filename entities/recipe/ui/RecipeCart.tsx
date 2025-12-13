@@ -73,7 +73,6 @@ const RecipeCard = ({
               {/*</View>*/}
             </View>
           )}
-
           <ThemedText className="font-bold">{data.title}</ThemedText>
           <ThemedText numberOfLines={3}>{data.description}</ThemedText>
         </View>
